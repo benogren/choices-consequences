@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* solids */
+  --color-darkcyan: #1f887e;
+  --color-brunswickgreen: #165b55;
+  --color-jet: #363636;
+
+  /* shades */
+  --color-darkcyan-100: #061b19;
+  --color-darkcyan-200: #0c3733;
+  --color-darkcyan-300: #13524c;
+  --color-darkcyan-400: #196e65;
+  --color-darkcyan-500: #1f887e;
+  --color-darkcyan-600: #2cc1b2;
+  --color-darkcyan-700: #58d9cc;
+  --color-darkcyan-800: #90e6dd;
+  --color-darkcyan-900: #c7f2ee;
+
+  --color-brunswickgreen-100: #041211;
+  --color-brunswickgreen-200: #092422;
+  --color-brunswickgreen-300: #0d3633;
+  --color-brunswickgreen-400: #124844;
+  --color-brunswickgreen-500: #165b55;
+  --color-brunswickgreen-600: #259a91;
+  --color-brunswickgreen-700: #3fd0c4;
+  --color-brunswickgreen-800: #7fe0d8;
+  --color-brunswickgreen-900: #bfefeb;
+
+  --color-jet-100: #0b0b0b;
+  --color-jet-200: #151515;
+  --color-jet-300: #202020;
+  --color-jet-400: #2b2b2b;
+  --color-jet-500: #363636;
+  --color-jet-600: #5e5e5e;
+  --color-jet-700: #868686;
+  --color-jet-800: #aeaeae;
+  --color-jet-900: #d7d7d7;
+
+  /* nested palette */
+  --color-score-low:  #ef4444;
+  --color-score-mid:  #facc15;
+  --color-score-high: #22c55e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* --- Custom overrides & helpers --- */
+
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: 
+    url('/bg.png') repeat,
+    linear-gradient(180deg, #1F887E 0%, #165B55 100%);
 }
+
+/* Buttons reset */
+button {
+  cursor: pointer;
+}
+
+/* Score bar (if you want to use global classes instead of inline styles) */
+/* .score-bar {
+  height: 0.75rem;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+.score-fill {
+  height: 100%;
+  transition: width 0.2s ease;
+  background: linear-gradient(90deg, #ef4444, #22c55e);
+} */
+
+/* Flip card helpers */
+/* .perspective { perspective: 1000px; }
+.preserve-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; } */
+
+/* crisp images */
+/* .pixel { image-rendering: pixelated; image-rendering: crisp-edges; } */
